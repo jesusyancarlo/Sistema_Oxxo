@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de PoS</title>
+    <!-- Asegúrate de que la carpeta css esté junto a este archivo -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <script src="./js/functions.js"></script>
+    <script src="./js/modal.js"></script>
+</head>
+<body>
+    <img src="./img/oxxo.png" class="logo">
+
+    <div class="contenido">
+        <div>
+            <h1 class="titulo">OXXO, Siempre cerca de ti</h1>
+            <h2 class="subtitulo">OXXO, a la vuelta de tu vida</h2>
+        </div>
+    </div>
+    
+    <img src="./img/burger.png" class="logo2">
+
+    <div class="contenedor">
+        <table id="carrito">
+            <thead>
+                <tr>
+                    <th class="titulocantidad">Cantidad</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo"></tbody>
+        </table>
+    </div>
+
+    <input type="text" id="codigodelproducto" class="claseinput" onkeydown="buscarproducto(event)">
+
+    <div class="contenedor2">
+        <input type="button" id="boton1" class="claseboton" onclick="cancelar_venta()">
+        <input type="button" id="boton2" class="claseboton" onclick="saldo_camion()">
+        <input type="button" id="boton3" class="claseboton" onclick="tranferencia()">
+        <input type="button" id="boton4" class="claseboton" onclick="abrirModal()">
+        <input type="button" id="boton5" class="claseboton" onclick="pagar()">
+
+        <div id="feedback" class="feedback"></div>
+        <div class="total">
+            <h1 id="total">$0.00</h1>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="contenido-modal">
+            <h2>Selecciona un saldo para tu telefono</h2>
+            <img src="./img/recarga50.png" style="height: 10%; width: 10%;" onclick="saldo50()"/>
+            <img src="./img/recarga100.png" style="height: 10%; width: 10%;" onclick="saldo100()"/>
+            <img src="./img/recarga200.png" style="height: 10%; width: 10%;" onclick="saldo200()"/>
+            <img src="./img/recarga500.png" style="height: 10%; width: 10%;" onclick="saldo500()"/>
+            <br>
+            <br>
+            <button onclick="cerrarModal()">cerrar</button>        
+        </div>
+    </div>
+</body>
+</html>
